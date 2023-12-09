@@ -17,7 +17,7 @@ O banco de dados é composto pelas seguintes tabelas:
 <br></br>
 5.  **Disciplina:**  Armazena informações como o ID e o nome da disciplina.
 <br></br>
-6.  **Facilitador:**  Armazena informações como o id, o nome, o cpf, o email, o telefone e o endereço do facilitador.
+6.  **Facilitador:**  Armazena informações como o ID, o nome, o CPF, o email, o telefone e o endereço do facilitador.
 <br></br>
 7. **Log_Estudante**: Armazena informações do histórico de atualizações do status do aluno.
 
