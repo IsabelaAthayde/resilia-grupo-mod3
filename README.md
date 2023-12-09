@@ -54,7 +54,7 @@ A seguir, são apresentadas as instruções para acessar as consultas SQL que fo
 
 1. Baixe o arquivo `consultas.sql` no anexo:
 
-2. Certifique-se de ter rodado as queries que se encontram respec no anexo 'criacao_das_tabelas.sql'.
+2. Certifique-se de ter rodado as queries que se encontram respectivamente no anexo 'database(Projeto).sql' e 'inserts.sql'.
 
 3. Importe o arquivo `consultas.sql` no PHPMyAdmin:
    ```
