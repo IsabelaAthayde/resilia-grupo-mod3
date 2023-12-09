@@ -1,4 +1,4 @@
-# resilia-grupo-mod3
+# Escola - Banco de Dados Instituição de Ensino
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
@@ -7,22 +7,29 @@
 Este projeto consiste na criação de um banco de dados SQL com o intuito de armazenar diversas informações do braço de ensino de uma instituição, tornando o gerenciamento da estrutura da empresa mais eficiente e eficaz. <br>
 O banco de dados é composto pelas seguintes tabelas:
 
-1.  **Aluno:** Armazena informações como o nome, o cpf, o email, o telefone e o endereço completo.
+1.  **Aluno:** Armazena informações como o nome, o CPF, o e-mail, o telefone, o endereço e o status do aluno.
 <br></br>
-2.  **Turma:** Armazena informações como o numero da sala e o turno.
+2.  **Turma:** Armazena informações como o número da sala, o turno e os alunos que fazem parte da turma.
 <br></br>
-3.  **Curso:** Armazena informações como o nome o id, o nome do curso, a data de inicio e a data de término.
+3.  **Curso:** Armazena informações como o nome, o ID, a data de início e a data de término do curso.
 <br></br>
-4.  **Modulos:** Armazena informações como o id, a data de inicio e a data de término.
+4.  **Modulos:** Armazena informações como o ID, a data de início e a data de término do módulo.
 <br></br>
-5.  **Disciplina:**  Armazena informações como o id e o nome da disciplina.
+5.  **Disciplina:**  Armazena informações como o ID e o nome da disciplina.
 <br></br>
-6.  **Facilitador:**  Armazena informações como o id, o nome, o cpf, o email, o telefone, o endereço completo e a disciplina. 
+6.  **Facilitador:**  Armazena informações como o id, o nome, o cpf, o email, o telefone e o endereço do facilitador.
 <br></br>
+7. **Log_Estudante**: Armazena informações do histórico de atualizações do status do aluno.
 
 ## Requisitos
-Para executar este projeto, é necessário ter instalado o MySQL, o xampp e o PHPMyAdmin (ou  acesse a  <a href="http://localhost/phpmyadmin">versão online</a>).
+Para executar este projeto, é necessário ter instalado o MySQL, o xampp e o PHPMyAdmin (ou  acesse a  <a href="http://localhost/phpmyadmin">versão online</a>). Lembre-se de manter ativado o mySql e o Apache no Xampp.
 <br></br>
+
+## Informações dos arquivos sql
+
+* **database(Projeto).sql**: Script de criação do banco de dados, das tabelas e do trigger.
+* **inserts.sql**: Script de inserção de mais de 50 dados nas entidades.
+* **consultas.sql**: Script com as principais consultas utilizadas no banco de dados.
 
 ## Instruções de instalação
 
@@ -31,24 +38,29 @@ Para executar este projeto, é necessário ter instalado o MySQL, o xampp e o PH
    https://github.com/IsabelaAthayde/resilia-grupo-mod3.git
    ```
 
-2. Importe o arquivo `NomedoArquivo.sql` no PHPMyAdmin:
+2. Importe o arquivo `database(Projeto).sql` no PHPMyAdmin:
    ```
-   Import -> Selecione o arquivo NomedoArquivo.sql -> Clique em "Importar"
+   Import -> Selecione o arquivo database(Projeto).sql -> Clique em "Importar"
    ```
-
+   
+3. Importe o arquivo `inserts.sql` no PHPMyAdmin:
+   ```
+   Import -> Selecione o arquivo `inserts.sql` -> Clique em "Importar"
+   ```
+   
 # Consultas SQL
 
 A seguir, são apresentadas as instruções para acessar as consultas SQL que foram utilizadas para consultar o banco de dados:
 
-1. Baixe o arquivo `NomedoArquivo.sql` no anexo:
+1. Baixe o arquivo `consultas.sql` no anexo:
 
-2. Certifique-se de ter rodado a query que se encontra no anexo 'nomedoarquivo.sql'.
+2. Certifique-se de ter rodado as queries que se encontram respec no anexo 'criacao_das_tabelas.sql'.
 
-3. Importe o arquivo `NomedoArquivo.sql` no PHPMyAdmin:
+3. Importe o arquivo `consultas.sql` no PHPMyAdmin:
    ```
-   Import -> Selecione o arquivo NomedoArquivo.sql -> Clique em "Importar"
+   Import -> Selecione o arquivo consultas.sql -> Clique em "Importar"
    ```
-
+   
 # 🤝 Colaboradores
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
@@ -88,21 +100,21 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         </a>
       </td>
       <td align="center">
-            <a href="https://github.com/Priscila">
-           <img src="https://avatars.githubusercontent.com/u/144072715?v=4" width="100px;" alt="Foto da Priscila"/><br>
-          <sub>
-            <b>Priscila</b>
-          </sub>
-        </a>
-      </td>
-      <td align="center">
         <a href="https://github.com/samgomes0305">
           <img src="https://avatars.githubusercontent.com/u/143973237?v=4" width="100px;" alt="Foto do Samuel Galvão"/><br>
           <sub>
             <b>Samuel Galvão</b>
           </sub>
         </a>
-      </td
+      </td>
+      <td align="center">
+         <a>
+           <img src="https://avatars.githubusercontent.com/u/144072715?v=4" width="100px;" alt="Foto da Priscila"/><br>
+          <sub>
+            <b>Priscila</b>
+          </sub>
+        </a>
+      </td>
     </tr>
   </table>
 
