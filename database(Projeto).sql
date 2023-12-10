@@ -63,3 +63,11 @@ ADD CONSTRAINT fk_id_facilitador FOREIGN KEY (id_facilitador) REFERENCES facilit
 ALTER TABLE modulo
 ADD COLUMN id_curso INT(11) NOT NULL,
 ADD CONSTRAINT fk_id_curso_modulo FOREIGN KEY (id_curso) REFERENCES curso(id_curso);
+
+CREATE TABLE log_estudante (
+    id_log INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_aluno INT(11) NOT NULL,
+    data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    novo_status VARCHAR(20) NOT NULL,
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
+);
