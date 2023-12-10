@@ -11,7 +11,6 @@ JOIN disciplina ON facilitador.id_facilitador = disciplina.id_facilitador
 GROUP BY facilitador.id_facilitador
 HAVING COUNT(*) > 1;
 
-
 -- Retorna a porcentagem de evasão de alunos 
 CREATE VIEW porcentagem_evasao AS
 SELECT  turma.id_turma AS id_turma ,turma.numero_sala, turma.turno,
@@ -26,3 +25,23 @@ FROM turma
 INNER JOIN aluno ON turma.id_turma = aluno.id_turma
 WHERE aluno.status = 'Evasão'
 GROUP BY turma.id_turma;
+
+-- Criação do trigger aluno_status_trigger
+
+DELIMITER //
+
+CREATE TRIGGER aluno_status_trigger
+AFTER UPDATE ON aluno FOR EACH ROW
+BEGIN
+    IF NEW.status <> OLD.status THEN
+        INSERT INTO log_estudante (id_aluno, data_atualizacao, novo_status)
+        VALUES (NEW.id_aluno, NOW(), NEW.status);
+    END IF;
+END //
+
+-- Mostra a definição do trigger associado à tabela aluno na base de dados escola
+SHOW CREATE TRIGGER escola.aluno_status_trigger;
+
+-- Atualização de um registro na tabela aluno
+UPDATE aluno SET status = 'Evasão' WHERE id_aluno = 1;
+select * from log_estudante;
