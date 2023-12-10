@@ -17,12 +17,12 @@ CREATE VIEW porcentagem_evasao AS
 SELECT  turma.id_turma AS id_turma ,turma.numero_sala, turma.turno,
 FLOOR((COUNT(aluno.id_aluno) * 100) / (SELECT  COUNT(*)
 FROM turma
-INNER JOIN aluno ON turma.id_turma = aluno.id_turma
+INNER JOIN aluno ON aluno.id_turma = turma.id_turma
 GROUP BY turma.id_turma
-HAVING turma.id_turma = aluno.id_turma
+HAVING turma.id_turma = aluno.id_turma 
 )
 ) AS porcentagem_evasao
 FROM turma 
 INNER JOIN aluno ON turma.id_turma = aluno.id_turma
 WHERE aluno.status = 'Evasão'
-GROUP BY turma.numero_sala, turma.turno;
+GROUP BY turma.id_turma;
