@@ -45,3 +45,22 @@ SHOW CREATE TRIGGER escola.aluno_status_trigger;
 -- Atualização de um registro na tabela aluno
 UPDATE aluno SET status = 'Evasão' WHERE id_aluno = 1;
 select * from log_estudante;
+
+-- Consulta para obter informações sobre os alunos que iniciaram o curso após 2023-01-01
+SELECT aluno.nome, turma.numero_sala, curso.nome_curso, curso.data_inicio
+FROM aluno
+INNER JOIN turma ON aluno.id_turma = turma.id_turma
+INNER JOIN curso ON turma.id_curso = curso.id_curso
+WHERE curso.data_inicio > '2023-01-01'
+ORDER BY curso.data_inicio, aluno.nome;
+
+-- Seleciona todas as informações dos módulos e conta o número de disciplinas associadas a cada módulo
+SELECT
+    modulo.*,
+    COUNT(disciplina.id_disciplina) AS num_disciplinas
+FROM
+    modulo
+LEFT JOIN
+    disciplina ON modulo.id_modulo = disciplina.id_modulo
+GROUP BY
+    modulo.id_modulo;
